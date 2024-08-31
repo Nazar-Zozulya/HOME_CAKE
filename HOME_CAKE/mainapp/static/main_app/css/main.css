@@ -1,0 +1,186 @@
+.new{
+    background: white url(../img/new.jpg) 50% 0 no-repeat ;
+    background-size: 100%, 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 7%;
+    gap: 4vh;
+}
+main{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    /* gap:  */
+}
+h1{
+    font-family: 'PosterizerKGRough';
+    font-size: 48px;
+    
+}
+
+.new-products{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-bottom: 6%;
+    gap: 10vh;
+}
+
+.product-cart{
+    width: 20%;
+    box-shadow: 7px 8px 15px rgba(0, 0, 0, 0.429) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    gap: 2vh;
+    padding: 1vh;
+}
+
+.product-cart img{
+    height: 20vh;
+}
+
+.main-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+}
+
+.name{
+    font-family: "Jura SemiBold";
+    font-size: 24px
+}
+
+.price{
+    font-family: "Jura SemiBold";
+    font-size: 20px
+}
+
+.composition{
+    width: 90%;
+    font-size: 15px;
+    font-family: "Jura SemiBold";
+    text-align: center;
+    color: #5C5C5C;
+}
+
+.second-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+}
+
+.weight{
+    font-family: "Jura SemiBold";
+    font-size: 12px;
+    color: #5C5C5C;
+}
+
+.about-us{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    background: white url(../img/123.jpg) 50% 0 no-repeat ;
+    background-size: 1920px;
+    background-position: center;
+    padding: 30vh;
+    gap: 5vh;
+}
+
+.about-us-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+.about-us h1{
+    font-size: 100px;
+    font-family: 'PosterizerKGRough';
+}
+
+.about-box{
+    height: 100%;
+    width: 50%;
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15vh;
+}
+
+.about-block{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    background: rgba(241, 241, 241, 0.729);
+    padding: 20px 0 20px 20px;
+    gap: 2vh;
+    border-radius: 15px;
+    width: 55%;
+}
+
+.about-img-left{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background:  url('https://malenka-pekarnia.com/img/love/2.png');
+    margin-left: -70px;
+    background-size: 70px;
+    margin-top: -40px;
+}
+
+.about-img-right{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background:  url('https://malenka-pekarnia.com/img/love/2.png');
+    background-size: 70px;
+    margin-left: 360px;
+    margin-top: -40px;
+}
+
+.about-title{
+    font-family: 'Jura SemiBold';
+    /* font-weight: bold; */
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.about-text{
+    font-family: 'Jura SemiBold';
+    color: #4B4242;
+    font-size: 19px;
+}
+
+.assortment{
+    background: white url(../img/assortment.jpg) 50% 0 no-repeat ;
+    background-size: 100%, 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 7%;
+    gap: 4vh;
+    background-position-y: top;
+    background-size: 100%;
+}
