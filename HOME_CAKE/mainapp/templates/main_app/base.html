@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'main_app/css/base.css' %}">
+    <script src="{% static 'main_app/js/main.js' %}"></script>
+    <script src="{% static 'main_app/js/base.js' %}"></script>
     {% block links %}
 
     {% endblock %}
@@ -14,10 +16,10 @@
     <header>
         <!-- <img class="bg-header" src="{% static 'main_app/img/bg-header.jpg' %}" alt="123"> -->
         <div class="navigation">
-            <a href="#">Головна</a>
-            <a href="#">Новинки</a>
-            <a href="#">Про нас</a>
-            <a href="#">Ассортимент</a>
+            <button id="headerMain" >Головна</button>
+            <button id="headerNews">Новинки</button>
+            <button id="headerAboutUs">Про нас</button>
+            <button id="headerAssortment">Ассортимент</button>
         </div>
         <div class="logo">
             <img src="{% static 'main_app/img/logo.png' %}" alt="">
@@ -79,5 +81,9 @@
             </div>
         </div>
     </footer>
+    <script src="{% static 'main_app/js/base.js' %}"></script>
+    {% block scripts %}
+
+    {% endblock %}
 </body>
 </html>
