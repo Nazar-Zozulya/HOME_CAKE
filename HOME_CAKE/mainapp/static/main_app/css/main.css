@@ -43,10 +43,11 @@ h1{
     border-radius: 15px;
     gap: 2vh;
     padding: 1vh;
+    background-color: white;
 }
 
 .product-cart img{
-    height: 20vh;
+    width: 90%;
 }
 
 .main-info{
@@ -135,27 +136,31 @@ h1{
     padding: 20px 0 20px 20px;
     gap: 2vh;
     border-radius: 15px;
-    width: 55%;
+    width: 80%;
 }
 
 .about-img-left{
-    position: absolute;
     width: 70px;
     height: 70px;
-    background:  url('https://malenka-pekarnia.com/img/love/2.png');
-    margin-left: -70px;
-    background-size: 70px;
-    margin-top: -40px;
+    /* background:  url('https://malenka-pekarnia.com/img/love/2.png');
+    background-size: 70px; */
+    /* left: 140px; */
+    position: absolute;
+    /* margin-top: 80px; */
+    left: 130px;
+    /* margin-top: -50px; */
 }
 
 .about-img-right{
-    position: absolute;
     width: 70px;
     height: 70px;
     background:  url('https://malenka-pekarnia.com/img/love/2.png');
     background-size: 70px;
-    margin-left: 360px;
-    margin-top: -40px;
+    /* right: 80px; */
+    position: absolute;
+    /* margin-top: 10px;
+    left: -60px; */
+    /* top: -60px; */
 }
 
 .about-title{
@@ -173,7 +178,6 @@ h1{
 
 .assortment{
     background: white url(../img/assortment.jpg) 50% 0 no-repeat ;
-    background-size: 100%, 50%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -183,4 +187,54 @@ h1{
     gap: 4vh;
     background-position-y: top;
     background-size: 100%;
+    background-position: bottom;
+}
+
+
+@media screen and (max-width: 1250px) {
+    .product-cart{
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .product-cart{
+        width: 40%;
+    }
+    .new-products{
+        gap: 7vh;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .product-cart{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .about-us h1{
+        font-size: 80px;
+    }
+}
+
+@media screen and (max-width: 790px){
+    .about-us h1{
+        font-size: 70px;
+    }
+
+    .about-us-content{
+        flex-direction: column;
+    }
+
+    .about-box{
+        flex-direction: column;
+        width: 100%;
+        gap: 7vh;
+    }
+
+    .about-block{
+        padding: 10px;
+        width: 90%;
+    }
 }
