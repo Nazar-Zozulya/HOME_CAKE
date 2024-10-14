@@ -7,12 +7,17 @@
 {% block links %}
 <link rel="stylesheet" href="{% static 'main_app/css/main.css' %}">
 
+<!-- <script src="{% static 'main_app/js/main.js' %}" defer></script> -->
+<script src="{% static 'main_app/js/jquery-3.7.1.min.js' %}" defer></script>
+<script src="{% static 'main_app/js/slick.min.js' %}" defer></script>
 <script src="{% static 'main_app/js/main.js' %}" defer></script>
 
 {% endblock %}
 
 {% block scripts %}
-<script src="{% static 'main_app/js/main.js' %}"></script>
+<!-- <script src="{% static 'main_app/js/jquery-3.7.1.min.js' %}"></script>
+<script src="{% static 'main_app/js/slick.main.js' %}"></script>
+<script src="{% static 'main_app/js/main.js' %}"></script> -->
 {% endblock %}
 
 
@@ -20,7 +25,7 @@
 <div class="new">
     <h1>Наші новинки</h1>
     <div class="new-products">
-        {% for products in products %}
+        {% for products in new_products %}
             <div class="product-cart">
                 <img src="{{products.image.url}}" alt="123">
                 <div class="main-info">
@@ -80,8 +85,8 @@
     </div>
 </div>
 <div class="assortment">
-    <h1>Наш Ассортимент</h1>
-    <div class="new-products">
+    <!-- <h1>Наш Ассортимент</h1> -->
+    <div class="new-products" id="assortmentProduct">
         {% for products in products %}
             <div class="product-cart">
                 <img src="{{products.image.url}}" alt="123">
@@ -109,9 +114,6 @@
                 </div>
             </div>
         {% endfor %}
-    </div>
-    <div class="slider">
-
     </div>
 </div>
 {% endblock %}

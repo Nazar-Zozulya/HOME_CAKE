@@ -1,3 +1,6 @@
+$(document).ready(function () {
+    $('#assortmentProduct').slick();
+});
 
 
 // Подключаю кнопки навигации
@@ -5,6 +8,10 @@ var headerMain = document.querySelector('#headerMain')
 var headerMain = document.querySelector('#headerNews')
 var headerMain = document.querySelector('#headerAboutUs')
 var headerMain = document.querySelector('#headerAssortment')
+// var sliderAssortment = document.querySelector(".assortment")
+
+
+
 
 // Делаю скролл при нажатии
 headerMain.onclick = function () {
@@ -22,4 +29,3 @@ headerAboutUs.onclick = function () {
 headerAssortment.onclick = function () {
     document.querySelector('.assortment').scrollIntoView()
 }
-
