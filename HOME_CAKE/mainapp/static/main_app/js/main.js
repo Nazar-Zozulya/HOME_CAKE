@@ -1,5 +1,12 @@
 $(document).ready(function () {
-    $('#assortmentProduct').slick();
+    $('.assortment-products').slick({
+        arrows:false,
+        dots:true,
+        adaptiveHeight:true,
+        slidesToShow:3,
+        easing: "ease",
+        infinite: false,
+    });
 });
 
 
