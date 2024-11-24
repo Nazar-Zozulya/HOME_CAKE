@@ -1,0 +1,124 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block title %}
+Головна
+{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'main_app/css/main.css' %}">
+
+<!-- <script src="{% static 'main_app/js/main.js' %}" defer></script> -->
+<script src="{% static 'main_app/js/jquery-3.7.1.min.js' %}" defer></script>
+<script src="{% static 'main_app/js/slick.min.js' %}" defer></script>
+<script src="{% static 'main_app/js/main.js' %}" defer></script>
+
+{% endblock %}
+
+{% block scripts %}
+<!-- <script src="{% static 'main_app/js/jquery-3.7.1.min.js' %}"></script>
+<script src="{% static 'main_app/js/slick.main.js' %}"></script>
+<script src="{% static 'main_app/js/main.js' %}"></script> -->
+{% endblock %}
+
+
+{% block content %}
+<div class="new">
+    <h1>Наші новинки</h1>
+    <div class="new-products">
+        <!-- {% for products in new_products %}
+            <div class="help-slider-cart">
+                <div class="product-cart ">
+                    <img src="{{products.image.url}}" alt="123">
+                    <div class="main-info">
+                        <p class="name">
+                            {{products.name}}
+                        </p>
+                        <p class="price">
+                            {{products.price}}грн
+                        </p>
+                    </div>
+                    <p class="composition">
+                        {{products.composition}}
+                    </p>
+                    <div class="second-info">
+                        <p class="weight">
+                            {{products.weight}}гр.
+                        </p>
+                        <p class="weight">
+                            /
+                        </p>
+                        <p class="weight">
+                            {{products.kilocalories}}ккал.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %} -->
+
+    </div>
+</div>
+
+<div class="about-us">
+    <h1>Власна Кондитерська</h1>
+    <div class="about-us-content">
+        <div class="about-box">
+            <div class="about-block-1 about-block">
+                <!-- <img src="https://malenka-pekarnia.com/img/love/2.png" alt="" class="about-img-left"> -->
+                <p class="about-title">Натуральні інгредієнти</p>
+                <p class="about-text">Використовуємо лише натуральні інгредієнти , без додавання хімічних добавок та покращувачів смаку</p>
+            </div>
+            <div class="about-block-1 about-block">
+                <!-- <img src="https://malenka-pekarnia.com/img/love/2.png" alt="" class="about-img-left"> -->
+                <p class="about-title">Натуральні інгредієнти</p>
+                <p class="about-text">Використовуємо лише натуральні інгредієнти , без додавання хімічних добавок та покращувачів смаку</p>
+            </div>
+        </div>
+        <div class="about-box">
+            <div class="about-block-1 about-block">
+                <!-- <div class="about-img-right"></div> -->
+                <p class="about-title">Натуральні інгредієнти</p>
+                <p class="about-text">Використовуємо лише натуральні інгредієнти , без додавання хімічних добавок та покращувачів смаку</p>
+            </div>
+            <div class="about-block-1 about-block">
+                <!-- <div class="about-img-right"></div> -->
+                <p class="about-title">Натуральні інгредієнти</p>
+                <p class="about-text">Використовуємо лише натуральні інгредієнти , без додавання хімічних добавок та покращувачів смаку</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="assortment">
+    <h1>Наш Ассортимент</h1>
+    <div class="assortment-products">
+        <!-- {% for products in products %}
+            <div class="help-slider-cart">
+                <div class="product-cart">
+                    <img src="{{products.image.url}}" alt="123">
+                    <div class="main-info">
+                        <p class="name">
+                            {{products.name}}
+                        </p>
+                        <p class="price">
+                            {{products.price}}грн
+                        </p>
+                    </div>
+                    <p class="composition">
+                        {{products.composition}}
+                    </p>
+                    <div class="second-info">
+                        <p class="weight">
+                            {{products.weight}}гр.
+                        </p>
+                        <p class="weight">
+                            /
+                        </p>
+                        <p class="weight">
+                            {{products.kilocalories}}ккал.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %} -->
+    </div>
+</div>
+{% endblock %}

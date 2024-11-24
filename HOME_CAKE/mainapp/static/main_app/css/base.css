@@ -1,0 +1,336 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Muthea';
+    src: local("../fonts/Muthea.ttf"), url("../fonts/Muthea.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+  }
+
+html{
+    scroll-behavior: smooth;
+    overflow-x:hidden;
+    display: flex;
+    margin-right: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 0;
+    scrollbar-width: none;
+}
+
+
+::-webkit-scrollbar { width: 0; }
+
+
+header{
+    width: 100%;
+    /* height: 100vh;   */
+    background: white url(../img/bg-header.jpg) 50% 0 no-repeat ;
+    min-height: 798px;
+    background-size: auto, 140%;
+    background-position: top;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navigation{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+    margin-top: 2%;
+}
+
+.navigation button{
+    color: #90444E;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: "Lobster";
+    text-shadow: 4px 3px 30px rgba(0, 0, 0, 0.263);
+    background-color: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.header-main{
+    color: #90444E;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: "Lobster";
+    text-shadow: 4px 3px 30px rgba(0, 0, 0, 0.263);
+}
+
+.logo{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10%;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2%;
+}
+
+.logo img{
+    width: 10%;
+    vertical-align: center;
+}
+
+.logo-1{
+    font-size: 200px;
+    color: #90444E;
+    font-family: "Muthea";
+    /* border: 3px red solid ; */
+    text-shadow: 4px 3px 1px rgb(0, 0, 0);
+}
+
+.logo-2{
+    font-size: 40px;
+    color: #90444E;
+    font-family: "Jura";
+    text-shadow: 4px 3px 1px rgb(9, 9, 9);
+}
+
+.circle{
+    width: 10px;
+    height: 10px;
+    background: #F9C91E;
+    border-radius: 50px;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    background: #1B1E23;
+    height: auto;
+    padding: 30px;
+}
+
+.logo-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo-footer img{
+    width: 70px;
+}
+
+.logo-1-footer{
+    font-size: 36px;
+    color: #90444E;
+    font-family: "Muthea";
+    text-shadow: 4px 3px 1px rgb(0, 0, 0);
+}
+
+.logo-2-footer{
+    font-size: 16px;
+    color: #90444E;
+    font-family: "Jura";
+    text-shadow: 4px 3px 1px rgb(0, 0, 0);
+}
+
+.footer-560{
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    width: 50%;
+    flex-direction: row;
+}
+.footer-1part{
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    width: 50%;
+    flex-direction: row;
+}
+
+.navigation-footer{
+    display: flex;
+    align-items: start;
+    gap: 15px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.nav-footer{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    text-shadow: 4px 3px 1px rgb(23, 23, 23);
+}
+
+.nav-footer a{
+    color: #90444E;
+    text-decoration: none;
+    text-shadow: 4px 3px 1px rgb(0, 0, 0);
+    font-size: 22px;
+    font-family: "Lobster";
+}
+
+.footer-title{
+    color: #90444E;
+    text-decoration: none;
+    font-size: 22px;
+    font-family: "Lobster";
+    text-shadow: 4px 3px 1px rgb(0, 0, 0);
+}
+
+.media-footer{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-media{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+
+.social-media-img{
+    width: 40px;
+    height: 40px;
+}
+
+.telegram{
+    background: url('https://upload.wikimedia.org/wikipedia/commons/5/5c/Telegram_Messenger.png');
+    background-size: 40px;
+    background-position: center;
+}
+
+.instagram{
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png');
+    background-size: 40px;
+    background-position: center;
+    border-radius: 100px;
+}
+
+.facebook{
+    background: url('https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png');
+    background-size: 40px;
+    background-position: center;
+}
+
+.contacts-footer{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.us-contact{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.us-contact p {
+    color: #90444E;
+    text-decoration: none;
+    text-shadow: 4px 3px 1px rgb(0, 0, 0);
+    font-size: 16px;
+    font-family: "Lobster";
+}
+
+.telephone{
+    width: 18px;
+    height: 18px;
+    background: url('../img/telephone.png');
+    background-size: 18px;
+}
+
+.mail{
+    width: 18px;
+    height: 18px;
+    background: url('../img/mail.png');
+    background-size: 18px;
+}
+
+@media screen and (max-width: 900px) {
+    .logo-1{
+        font-size: 150px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .logo img{
+        width: 12%;
+    }
+}
+
+@media screen and (min-width: 1220px) {
+    header{
+        background-size: 100%, auto;
+        background-position: center;
+    }
+}
+@media screen and (max-width: 650px) {
+    .logo-1{
+        font-size: 100px;
+    }
+
+    .logo img{
+        width: 10%;
+        vertical-align: center;
+    }
+
+
+    .navigation button{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .logo img{
+        width: 16%;
+    }
+
+    .navigation-footer{
+        display: none;
+    }
+
+    .footer-1part{
+        width: 30%;
+    }
+
+    .footer-560{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 560px){   
+    footer{
+        flex-direction: column;
+        justify-content: end;
+        gap: 30px;
+    }
+    .footer-560{
+        width: 100%;
+    }
+    .footer-1part{
+        width: 100%;
+    }
+}
