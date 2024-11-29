@@ -83,23 +83,12 @@ WSGI_APPLICATION = 'HOME_CAKE.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'homecake_db',
-#         'USER': 'root',
-#         'PASSWORD': 'naztop777',
-#         'HOST': '127.0.0.1',
-#         'PORT': '3306',
-#     }
-# }
-
 DATABASES  =  { 
     'default' :  { 
         'ENGINE' :  'django.db.backends.postgresql_psycopg2' , 
         'NAME' :  'product_hc' , 
         'USER' :  'postgres' , 
-        'PASSWORD' :  'naztop777' , 
+        'PASSWORD' :  'nztop777' , 
         'HOST' :  'localhost' , 
         'PORT' :  '5432' , 
     } ,

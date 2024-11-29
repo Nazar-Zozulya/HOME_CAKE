@@ -1,5 +1,5 @@
 from django.db import models
-import json
+# import json
 # Create your models here.
 
 class Products(models.Model):
