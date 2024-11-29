@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import *
+from mainapp.models import *
 # import numpy as np
 # Create your views here.
 
