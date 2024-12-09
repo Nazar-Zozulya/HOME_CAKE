@@ -20,15 +20,36 @@
     <header>
         <!-- <img class="bg-header" src="{% static 'main_app/img/bg-header.jpg' %}" alt="123"> -->
         <div class="navigation">
-            <button id="headerMain" >Головна</button>
-            <button id="headerNews">Новинки</button>
-            <button id="headerAboutUs">Про нас</button>
-            <button id="headerAssortment">Ассортимент</button>
+            <div class="navigation-part">
+                <button id="headerMain" >Головна</button>
+                <button id="headerNews">Новинки</button>
+                <button id="headerAboutUs">Про нас</button>
+                <button id="headerAssortment">Ассортимент</button>
+            </div>
+            <div class="navigation-part">
+                <button id="headerSelfOrder">Замовити своє</button>
+                <button id="headerCart">Кошик</button>
+            </div>
         </div>
         <div class="logo">
-            <img src="{% static 'main_app/img/logo.png' %}" alt="">
-            <p class="logo-1">Home Cake</p>
-            <p class="logo-2">IRA KUSH</p>
+            <div class="image-name-logo">
+                <img src="{% static 'main_app/img/logo.png' %}" alt="">
+                <p>Home Cake</p>
+            </div>
+            <div class="all-links-logo">
+                <div class="links-in-media-logo">
+                    <div class="link-div">
+                        <div class="link">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="text-logo">
+                    <p>HOME.CAKE.DP</p>
+                    <p>IRA KUSH</p>
+                    <p>+380 (63) 460 40 97</p>
+                </div>
+            </div>
         </div>
     </header>
 

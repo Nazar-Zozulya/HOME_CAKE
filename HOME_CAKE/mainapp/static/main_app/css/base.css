@@ -43,24 +43,35 @@ header{
 }
 
 .navigation{
-    width: 100%;
+    width: 90%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 3%;
     margin-top: 2%;
 }
 
-.navigation button{
+.navigation-part{
+    display: flex;
+    gap: 40px;
+}
+
+.navigation-part button{
     color: #90444E;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 28px;
     font-family: "Lobster";
-    text-shadow: 4px 3px 30px rgba(0, 0, 0, 0.263);
+    text-shadow: 0px 0px 30px rgba(255, 135, 151, 0.8);
     background-color: none;
     background: none;
     border: none;
     cursor: pointer;
+    transition: all 300;
+}
+
+.navigation-part button:hover{
+    text-shadow: 0px 0px 30px rgba(255, 255, 255, 0.9);
+    color: #BB5F6B;
+    /* font-size: 29px; */
 }
 
 .header-main{
@@ -82,20 +93,29 @@ header{
     padding-top: 2%;
 }
 
-.logo img{
-    width: 10%;
-    vertical-align: center;
+.image-name-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1 -20px;
+    
 }
 
-.logo-1{
-    font-size: 200px;
+.image-name-logo img{
+    width: 200px;
+    vertical-align: center;
+    text-shadow: 0px 0px 30px rgba(255, 255, 255, 0.1);
+}
+
+.image-name-logo p {
+    font-size: 96px;
     color: #90444E;
     font-family: "Muthea";
-    /* border: 3px red solid ; */
-    text-shadow: 4px 3px 1px rgb(0, 0, 0);
+    text-shadow: 0px 0px 30px rgba(255, 135, 151, 0.4);
 }
 
-.logo-2{
+.text-logo p{
     font-size: 40px;
     color: #90444E;
     font-family: "Jura";
