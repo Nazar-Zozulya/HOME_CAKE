@@ -19,29 +19,36 @@
 <body>
     <header>
         <!-- <img class="bg-header" src="{% static 'main_app/img/bg-header.jpg' %}" alt="123"> -->
-        <div class="navigation">
-            <div class="navigation-part">
+        <div class="nav-bar">
+            <div class="nav-buttons">
                 <button id="headerMain" >Головна</button>
                 <button id="headerNews">Новинки</button>
                 <button id="headerAboutUs">Про нас</button>
                 <button id="headerAssortment">Ассортимент</button>
             </div>
-            <div class="navigation-part">
+            <div class="buy-buttons nav-buttons">
                 <button id="headerSelfOrder">Замовити своє</button>
                 <button id="headerCart">Кошик</button>
             </div>
         </div>
         <div class="logo">
-            <div class="image-name-logo">
+            <div class="main-logo">
                 <img src="{% static 'main_app/img/logo.png' %}" alt="">
                 <p>Home Cake</p>
             </div>
-            <div class="all-links-logo">
-                <div class="links-in-media-logo">
-                    <div class="link-div">
-                        <div class="link">
-
-                        </div>
+            <div class="second-logo">
+                <div class="social-media">
+                    <div class="links">
+                        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_box_alignment" class="link">
+                        </a>
+                    </div>
+                    <div class="links">
+                        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_box_alignment" class="link">
+                        </a>
+                    </div>
+                    <div class="links">
+                        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_box_alignment" class="link">           
+                        </a>
                     </div>
                 </div>
                 <div class="text-logo">
@@ -58,55 +65,57 @@
         {% endblock %}
     </main>
     <footer>
-        <div class="footer-1part">
-            <div class="logo-footer">
-                <img src="{% static 'main_app/img/logo.png' %}" alt="">
-                <p class="logo-1-footer">Home Cake</p>
-                <p class="logo-2-footer">IRA KUSH</p>
+        <div class="logo-footer">
+            <img src="{% static 'main_app/img/logo.png' %}" alt="">
+            <p>Home Cake</p>
+        </div>
+
+        <div class="nav-footer">
+            <div class="nav-footer-button">
+                <div class="circle"></div>
+                <a href="#">Головна</a>
             </div>
-            <div class="navigation-footer">
-                <div class="nav-footer">
-                    <div class="circle"></div>
-                    <a href="#">Головна</a>
+            <div class="nav-footer-button">
+                <div class="circle"></div>
+                <a href="#">Новинки</a>
+            </div>
+            <div class="nav-footer-button">
+                <div class="circle"></div>
+                <a href="#">Про нас</a>
+            </div>
+            <div class="nav-footer-button">
+                <div class="circle"></div>
+                <a href="#">Ассортимент</a>
+            </div>
+        </div>
+
+        <div class="media-footer">
+            <p class="footer-title">Наші соцмережі</p>
+            <div class="social-media-footer">
+                <div class="links">
+                    <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_box_alignment" class="link">
+                    </a>
                 </div>
-                <div class="nav-footer">
-                    <div class="circle"></div>
-                    <a href="#">Новинки</a>
+                <div class="links">
+                    <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_box_alignment" class="link">
+                    </a>
                 </div>
-                <div class="nav-footer">
-                    <div class="circle"></div>
-                    <a href="#">Про нас</a>
-                </div>
-                <div class="nav-footer">
-                    <div class="circle"></div>
-                    <a href="#">Ассортимент</a>
+                <div class="links">
+                    <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_box_alignment" class="link">           
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="footer-560">
-            <div class="media-footer">
-                <p class="footer-title">Наші соцмережі</p>
-                <div class="social-media">
-                    <div class="social-media-img telegram"></div>
-                    <div class="social-media-img instagram"></div>
-                </div>
-                <div class="social-media">
-                    <div class="social-media-img facebook"></div>
-                </div>
-            </div>
 
-            <div class="contacts-footer">
-                <p class="footer-title">Наші контакти</p>
-                <div class="us-contact">
-                    <div class="telephone">
-                    </div>
-                    <p>+380 999999999</p>
-                </div>
-                <div class="us-contact">
-                    <div class="mail">
-                    </div>
-                    <p>home_cake@gmail.con</p>
-                </div>
+        <div class="contacts-footer">
+            <p class="footer-title">Наші контакти</p>
+            <div class="us-contact">
+                <img src="{% static 'main_app/img/telephone.png' %}" alt="">
+                <p>+380 999999999</p>
+            </div>
+            <div class="us-contact">
+                <img src="{% static 'main_app/img/mail.png' %}" alt="">
+                <p>home_cake@gmail.con</p>
             </div>
         </div>
     </footer>

@@ -28,34 +28,39 @@ body{
 
 ::-webkit-scrollbar { width: 0; }
 
+/* header */
 
 header{
     width: 100%;
-    /* height: 100vh;   */
-    background: white url(../img/bg-header.jpg) 50% 0 no-repeat ;
-    min-height: 798px;
-    background-size: auto, 140%;
-    background-position: top;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: column;
-}
-
-.navigation{
-    width: 90%;
+    height: 100vh;
+    background: white url(../img/bg-header.png) 50% 50% no-repeat;
+    /* background-size: 1550px, auto; */
+    /* background-position: center; */
+    background-size:cover;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2%;
+    flex-direction: column;
+
 }
 
-.navigation-part{
+
+.nav-bar{
+    width: 90%;
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    /* padding: 30px; */
+    align-items: center;
+    margin-top: 10px;
+}
+
+.nav-buttons{
     display: flex;
     gap: 40px;
 }
 
-.navigation-part button{
+.nav-buttons button{
     color: #90444E;
     text-decoration: none;
     font-size: 28px;
@@ -68,60 +73,101 @@ header{
     transition: all 300;
 }
 
-.navigation-part button:hover{
+.nav-buttons button:hover{
     text-shadow: 0px 0px 30px rgba(255, 255, 255, 0.9);
     color: #BB5F6B;
     /* font-size: 29px; */
 }
 
-.header-main{
+/* .header-main{
     color: #90444E;
     text-decoration: none;
     font-size: 24px;
     font-family: "Lobster";
     text-shadow: 4px 3px 30px rgba(0, 0, 0, 0.263);
-}
+} */
 
 .logo{
-    height: 90%;
-    width: 100%;
     display: flex;
     justify-content: center;
-    padding-bottom: 10%;
+    /* padding-bottom: 10%; */
     align-items: center;
     flex-direction: column;
-    padding-top: 2%;
+    /* padding-top: 2%; */
+    margin-bottom: 20px;
 }
 
-.image-name-logo{
+.main-logo{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    gap: 1 -20px;
+    flex-direction: column;  
+    /* Frame 3 */
+
+
     
 }
 
-.image-name-logo img{
-    width: 200px;
+.main-logo img{
+    width: 180px;
+    margin: -55px 0px;
     vertical-align: center;
     text-shadow: 0px 0px 30px rgba(255, 255, 255, 0.1);
 }
 
-.image-name-logo p {
+.main-logo p {
     font-size: 96px;
     color: #90444E;
     font-family: "Muthea";
     text-shadow: 0px 0px 30px rgba(255, 135, 151, 0.4);
 }
 
+.social-media{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 25px;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    width: 55px;
+}
+
+.link{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(204, 204, 204);
+    border-radius: 100px;
+    box-shadow: 0px 0px 10px #90444E;
+    cursor: pointer;
+}
+.link:hover{
+    width: 50px;
+    height: 50px;
+    box-shadow: 0px 0px 15px #B4616C;
+}
+
+.text-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .text-logo p{
     font-size: 40px;
     color: #90444E;
     font-family: "Jura";
-    text-shadow: 4px 3px 1px rgb(9, 9, 9);
+    text-shadow: 0px 0px 30px rgba(255, 135, 151, 0.4);
+    /* text-shadow: 4px 3px 1px rgb(9, 9, 9); */
 }
-
+/* header */
 .circle{
     width: 10px;
     height: 10px;
@@ -129,13 +175,16 @@ header{
     border-radius: 50px;
 }
 
+/* footer */
+
 footer{
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: center;
     background: #1B1E23;
-    height: auto;
-    padding: 30px;
+    padding: 40px;
+
+    height: 200px;
 }
 
 .logo-footer{
@@ -146,114 +195,81 @@ footer{
 }
 
 .logo-footer img{
-    width: 70px;
+    width: 100px;
+    margin: -27px 0px;
 }
 
-.logo-1-footer{
-    font-size: 36px;
+.logo-footer p{
+    font-family: 'Muthea';
+    font-size: 50px;
+    text-align: center;
+
     color: #90444E;
-    font-family: "Muthea";
-    text-shadow: 4px 3px 1px rgb(0, 0, 0);
-}
 
-.logo-2-footer{
-    font-size: 16px;
-    color: #90444E;
-    font-family: "Jura";
-    text-shadow: 4px 3px 1px rgb(0, 0, 0);
-}
-
-.footer-560{
-    display: flex;
-    justify-content: space-around;
-    align-items: start;
-    width: 50%;
-    flex-direction: row;
-}
-.footer-1part{
-    display: flex;
-    justify-content: space-around;
-    align-items: start;
-    width: 50%;
-    flex-direction: row;
-}
-
-.navigation-footer{
-    display: flex;
-    align-items: start;
-    gap: 15px;
-    justify-content: center;
-    flex-direction: column;
+    text-shadow: 0px 0px 30px rgba(144, 68, 78, 0.4);
 }
 
 .nav-footer{
     display: flex;
+    align-items: start;
+    gap: 25px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.nav-footer-button{
+    display: flex;
     justify-content: start;
     align-items: center;
-    gap: 10px;
+    flex-direction: row;
+    gap: 15px;
     text-shadow: 4px 3px 1px rgb(23, 23, 23);
 }
 
-.nav-footer a{
+.nav-footer-button a{
     color: #90444E;
     text-decoration: none;
     text-shadow: 4px 3px 1px rgb(0, 0, 0);
     font-size: 22px;
     font-family: "Lobster";
+
+    text-shadow: 0px 0px 5px rgba(255, 135, 151, 0.4), 7px 10px 8.2px rgba(0, 0, 0, 0.8);
+}
+
+.nav-footer-button a:hover{
+    color: #BB5F6B;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4), 7px 10px 8.2px rgba(0, 0, 0, 0.8);
 }
 
 .footer-title{
+    font-family: 'Lobster';
+    font-size: 24px;
+
+
     color: #90444E;
-    text-decoration: none;
-    font-size: 22px;
-    font-family: "Lobster";
-    text-shadow: 4px 3px 1px rgb(0, 0, 0);
+
+    text-shadow: 0px 0px 5px rgba(255, 135, 151, 0.4), 7px 10px 8.2px rgba(0, 0, 0, 0.8);
 }
 
 .media-footer{
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 10px;
 }
 
-.social-media{
+.social-media-footer{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: row;
-    gap: 10px;
-}
-
-
-.social-media-img{
-    width: 40px;
-    height: 40px;
-}
-
-.telegram{
-    background: url('https://upload.wikimedia.org/wikipedia/commons/5/5c/Telegram_Messenger.png');
-    background-size: 40px;
-    background-position: center;
-}
-
-.instagram{
-    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png');
-    background-size: 40px;
-    background-position: center;
-    border-radius: 100px;
-}
-
-.facebook{
-    background: url('https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png');
-    background-size: 40px;
-    background-position: center;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
 }
 
 .contacts-footer{
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: start;
     flex-direction: column;
     gap: 10px;
@@ -267,15 +283,26 @@ footer{
     gap: 5px;
 }
 
-.us-contact p {
-    color: #90444E;
-    text-decoration: none;
-    text-shadow: 4px 3px 1px rgb(0, 0, 0);
-    font-size: 16px;
-    font-family: "Lobster";
+.us-contact img{
+    width: 24px;
+    height: 24px;
 }
 
-.telephone{
+.us-contact p {
+    font-family: 'Lobster';
+    font-size: 22px;    
+    
+    color: #90444E;
+    
+    text-shadow: 0px 0px 5px rgba(255, 135, 151, 0.4), 7px 10px 8.2px rgba(0, 0, 0, 0.8);
+}
+
+.us-contact p:hover{
+    color: #BB5F6B;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4), 7px 10px 8.2px rgba(0, 0, 0, 0.8);
+}
+
+/* .telephone{
     width: 18px;
     height: 18px;
     background: url('../img/telephone.png');
@@ -287,27 +314,12 @@ footer{
     height: 18px;
     background: url('../img/mail.png');
     background-size: 18px;
-}
+} */
 
-@media screen and (max-width: 900px) {
-    .logo-1{
-        font-size: 150px;
-    }
-}
+/* footer */
 
-@media screen and (max-width: 1200px) {
-    .logo img{
-        width: 12%;
-    }
-}
 
-@media screen and (min-width: 1220px) {
-    header{
-        background-size: 100%, auto;
-        background-position: center;
-    }
-}
-@media screen and (max-width: 650px) {
+/* @media screen and (max-width: 650px) {
     .logo-1{
         font-size: 100px;
     }
@@ -353,4 +365,4 @@ footer{
     .footer-1part{
         width: 100%;
     }
-}
+} */
