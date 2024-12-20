@@ -39,7 +39,7 @@ main{
     /* gap: 15px; */
 
     width: 400px;
-    height: 500px;
+    height: 400px;
 
     background: #FFFEFC;
     box-shadow: 3px 4px 7px 5px rgba(0, 0, 0, 0.3);
@@ -49,7 +49,7 @@ main{
 .product-cart img{
     /* width: 80%; */
     border-radius: 10px;
-    width: 380px;
+    width: 280px;
 }
 
 .main-info{
@@ -100,78 +100,113 @@ main{
     background: white url(../img/123.jpg) 50% 0 no-repeat ;
     background-size:cover;
     background-position: center;
-    padding: 30vh;
-    gap: 5vh;
-    height: 90vh;
+    /* padding: 30vh; */
+    /* gap: 5vh; */
+    height: 120vh;
+
+    
 }
 
 .about-us-content{
-    display: flex;
+    /* display: flex;
     justify-content: center;
+    align-items: center; */
+    /* width: 100%;
+    height: 100%; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    padding: 0px;
+    gap: 298px;
+
+    margin: 0 auto;
+    width: 80%;
+    height: 582px;
 
 }
 
 .about-box{
-    height: 100%;
-    width: 50%;
-    padding-top: 50px;
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    flex-direction: column; */
+    /* gap: 15vh; */
+    /* Frame 4 */
+
+
+    display: flex;
     flex-direction: column;
-    gap: 15vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+
+    margin: 0 auto;
+    width: 50%;
+    height: 100%;
 }
 
 .about-block{
-    display: flex;
+    /* display: flex;
     justify-content: start;
     align-items: start;
     flex-direction: column;
-    background: rgba(241, 241, 241, 0.729);
     padding: 20px 0 20px 20px;
     gap: 2vh;
     border-radius: 15px;
-    width: 80%;
-}
+    width: 80%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
 
-.about-img-left{
-    width: 70px;
-    height: 70px;
-    /* background:  url('https://malenka-pekarnia.com/img/love/2.png');
-    background-size: 70px; */
-    /* left: 140px; */
-    position: absolute;
-    /* margin-top: 80px; */
-    left: 130px;
-    /* margin-top: -50px; */
-}
+    margin: 0 auto;
+    width: 400px;
+    height: 300px;
 
-.about-img-right{
-    width: 70px;
-    height: 70px;
-    background:  url('https://malenka-pekarnia.com/img/love/2.png');
-    background-size: 70px;
-    /* right: 80px; */
-    position: absolute;
-    /* margin-top: 10px;
-    left: -60px; */
-    /* top: -60px; */
-}
-
-.about-title{
-    font-family: 'Jura';
-    /* font-weight: bold; */
-    font-size: 27px;
-    font-weight: 900;
 }
 
 .about-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px 50px;
+
+    width: 400px;
+    height: 150px;
+
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    margin: -40px 0px;
+
+}
+
+.about-img{
+    width: 90px;
+    height: 90px;
+}
+
+.about-title{
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+
+    color: #000000;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.about-description{
     font-family: 'Jura';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+
     color: #4B4242;
-    font-size: 19px;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .assortment{

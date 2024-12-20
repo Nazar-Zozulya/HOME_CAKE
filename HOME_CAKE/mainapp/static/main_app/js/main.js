@@ -42,7 +42,7 @@ function navNews() {
 }
 
 function navAboutUs() {
-    document.querySelector('.about-us h1').scrollIntoView()
+    document.querySelector('.about-us .title').scrollIntoView()
 }
 
 function navAssortment() {
