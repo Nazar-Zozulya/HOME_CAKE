@@ -217,7 +217,7 @@ footer{
     flex-direction: column;
 }
 
-.nav-footer-button{
+.nav-footer-buttons{
     display: flex;
     justify-content: start;
     align-items: center;
@@ -226,17 +226,19 @@ footer{
     text-shadow: 4px 3px 1px rgb(23, 23, 23);
 }
 
-.nav-footer-button a{
+.nav-footer-buttons button{
     color: #90444E;
     text-decoration: none;
     text-shadow: 4px 3px 1px rgb(0, 0, 0);
     font-size: 22px;
     font-family: "Lobster";
-
+    background: none;
+    border: none;
+    cursor: pointer;
     text-shadow: 0px 0px 5px rgba(255, 135, 151, 0.4), 7px 10px 8.2px rgba(0, 0, 0, 0.8);
 }
 
-.nav-footer-button a:hover{
+.nav-footer-buttons button:hover{
     color: #BB5F6B;
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4), 7px 10px 8.2px rgba(0, 0, 0, 0.8);
 }

@@ -19,28 +19,44 @@ $(document).ready(function () {
 
 
 // Подключаю кнопки навигации
-var headerMain = document.querySelector('#headerMain')
-var headerMain = document.querySelector('#headerNews')
-var headerMain = document.querySelector('#headerAboutUs')
-var headerMain = document.querySelector('#headerAssortment')
+// var navMain = document.getElementById('navMain')
+// var navNews = document.getElementById('navNews')
+// var navAboutUs = document.querySelector('#navAboutUs')
+// var navAssortment = document.querySelectorAll('#navAssortment')
 // var sliderAssortment = document.querySelector(".assortment")
 
 
 
 
 // Делаю скролл при нажатии
-headerMain.onclick = function () {
+// navMain.onclick = function () {
+//     window.scrollTo(0, 0)
+// }
+
+function navMain() {
     window.scrollTo(0, 0)
 }
 
-headerNews.onclick = function () {
+function navNews() {
     document.querySelector('.new').scrollIntoView()
 }
 
-headerAboutUs.onclick = function () {
+function navAboutUs() {
     document.querySelector('.about-us h1').scrollIntoView()
 }
 
-headerAssortment.onclick = function () {
+function navAssortment() {
     document.querySelector('.assortment').scrollIntoView()
 }
+
+// navNews.onclick = function () {
+//     document.querySelector('.new').scrollIntoView()
+// }
+
+// navAboutUs.onclick = function () {
+//     document.querySelector('.about-us h1').scrollIntoView()
+// }
+
+// navAssortment.onclick = function () {
+//     document.querySelector('.help-slider-cart').scrollIntoView()
+// }

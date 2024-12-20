@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="{% static 'main_app/css/base.css' %}">
     <script src="{% static 'main_app/js/main.js' %}"></script>
     <script src="{% static 'main_app/js/base.js' %}"></script>
-
+    <!-- Lobster -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Lobster&display=swap" rel="stylesheet">
+    <!-- Jost -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Jura:wght@300..700&family=Lobster&display=swap" rel="stylesheet">
     {% block links %}
 
     {% endblock %}
@@ -21,10 +25,10 @@
         <!-- <img class="bg-header" src="{% static 'main_app/img/bg-header.jpg' %}" alt="123"> -->
         <div class="nav-bar">
             <div class="nav-buttons">
-                <button id="headerMain" >Головна</button>
-                <button id="headerNews">Новинки</button>
-                <button id="headerAboutUs">Про нас</button>
-                <button id="headerAssortment">Ассортимент</button>
+                <button onclick="navMain()" >Головна</button>
+                <button onclick="navNews()">Новинки</button>
+                <button onclick="navAboutUs()">Про нас</button>
+                <button onclick="navAssortment()">Ассортимент</button>
             </div>
             <div class="buy-buttons nav-buttons">
                 <button id="headerSelfOrder">Замовити своє</button>
@@ -71,21 +75,21 @@
         </div>
 
         <div class="nav-footer">
-            <div class="nav-footer-button">
+            <div class="nav-footer-buttons">
                 <div class="circle"></div>
-                <a href="#">Головна</a>
+                <button onclick="navMain()">Головна</button>
             </div>
-            <div class="nav-footer-button">
+            <div class="nav-footer-buttons">
                 <div class="circle"></div>
-                <a href="#">Новинки</a>
+                <button onclick="navNews()">Новинки</button>
             </div>
-            <div class="nav-footer-button">
+            <div class="nav-footer-buttons">
                 <div class="circle"></div>
-                <a href="#">Про нас</a>
+                <button onclick="navAboutUs()">Про нас</button>
             </div>
-            <div class="nav-footer-button">
+            <div class="nav-footer-buttons">
                 <div class="circle"></div>
-                <a href="#">Ассортимент</a>
+                <button onclick="navAssortment()">Ассортимент</button>
             </div>
         </div>
 
