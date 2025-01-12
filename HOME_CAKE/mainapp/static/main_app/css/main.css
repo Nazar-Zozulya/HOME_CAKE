@@ -61,33 +61,96 @@ main{
 
 .name{
     font-family: "Jura";
-    font-size: 24px
+    font-size: 24px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.589);
 }
 
 .price{
     font-family: "Jura";
-    font-size: 20px
+    font-size: 20px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.589);
+    
 }
 
 .composition{
     width: 90%;
     font-size: 15px;
     font-family: "Jura";
-    text-align: center;
+    text-align: start;
     color: #5C5C5C;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.589);
 }
 
 .second-info{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
+    width: 95%;
+}
+
+.third-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 3%;
 }
+
+.add-to-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+}
+
+.add-to-cart button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+
+    /* background: white url(../img/add-to-cart.jpg) 50% 50% no-repeat; */
+    background-size:cover;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.589);
+
+    /* width: 50px;
+    height: 50px; */
+    /* background: linear-gradient(178.24deg, rgba(148, 148, 148, 0.7) -28.71%, rgba(77, 77, 77, 0.7) 125.21%); */
+    background: linear-gradient(178.24deg, #FFDCAB -28.71%, #FFB34E 125.21%);
+    border-radius: 10px;
+
+}
+
+.add-to-cart button svg{
+    width: 30px;
+    height: 30px;
+}
+
+.add-to-cart button:hover{
+    background: linear-gradient(178.24deg, #FFE8C7 -28.71%, #FFC67B 125.21%);
+
+}
+
+.cart-added{
+    background: linear-gradient(178.24deg, rgba(148, 148, 148, 0.7) -28.71%, rgba(77, 77, 77, 0.7) 125.21%);
+
+}
+
+/* .add-to-cart button img{
+    width: 30px;
+    height: 30px;
+} */
 
 .weight{
     font-family: "Jura";
     font-size: 12px;
     color: #5C5C5C;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.589);
 }
 .about-us{
     /* padding: 50px; */
@@ -97,7 +160,7 @@ main{
     align-items: center;
     flex-direction: column;
     overflow: hidden;
-    background: white url(../img/123.jpg) 50% 0 no-repeat ;
+    background: white url(../img/aboutus.jpg) 50% 0 no-repeat ;
     background-size:cover;
     background-position: center;
     /* padding: 30vh; */

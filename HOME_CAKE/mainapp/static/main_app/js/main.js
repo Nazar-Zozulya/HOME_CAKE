@@ -18,20 +18,8 @@ $(document).ready(function () {
 });
 
 
-// Подключаю кнопки навигации
-// var navMain = document.getElementById('navMain')
-// var navNews = document.getElementById('navNews')
-// var navAboutUs = document.querySelector('#navAboutUs')
-// var navAssortment = document.querySelectorAll('#navAssortment')
-// var sliderAssortment = document.querySelector(".assortment")
 
-
-
-
-// Делаю скролл при нажатии
-// navMain.onclick = function () {
-//     window.scrollTo(0, 0)
-// }
+//////////
 
 function navMain() {
     window.scrollTo(0, 0)
@@ -49,14 +37,14 @@ function navAssortment() {
     document.querySelector('.assortment').scrollIntoView()
 }
 
-// navNews.onclick = function () {
-//     document.querySelector('.new').scrollIntoView()
-// }
+//////////
 
-// navAboutUs.onclick = function () {
-//     document.querySelector('.about-us h1').scrollIntoView()
-// }
+var addToCart = document.querySelectorAll('#addToCart');
 
-// navAssortment.onclick = function () {
-//     document.querySelector('.help-slider-cart').scrollIntoView()
-// }
+addToCart.addEventListener('click', function(){
+    addToCart.classList.toggle('cart-added')
+})
+
+//////////
+
+// var cartButton = document.querySelector('#headerCart')

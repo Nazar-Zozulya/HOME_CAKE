@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+.visible{
+    display: flex;
+}
+
+
+
 @font-face {
     font-family: 'Muthea';
     src: local("../fonts/Muthea.ttf"), url("../fonts/Muthea.ttf") format("truetype");
@@ -18,7 +24,7 @@ html{
 }
 
 body{
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     width: 100%;
     padding-top: 0;
@@ -27,6 +33,319 @@ body{
 
 
 ::-webkit-scrollbar { width: 0; }
+
+/* modals */
+
+.exit{
+    font-family: 'Jua';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+
+    color: #6E6E6E;
+
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+.exit:hover{
+    color: #FF8B8B;
+}
+
+.cover{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 200vh;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.cart-modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 800px;
+    height: 700px;
+
+    background: #FFFEFC;
+    border-radius: 25px;
+}
+
+.cart-nav{
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+
+    width: 800px;
+    height: 70px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.cart-nav p{
+    font-family: 'M PLUS 1p';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    color: #000000;
+
+}
+
+.cart-products{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    width: 800px;
+    height: 500px;
+}
+
+.empty-cart{
+    font-family: 'M PLUS 1p';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    color: #000000;
+}
+
+.total-price{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 24px;
+
+    width: 800px;
+    height: 130px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.continue-shopping{
+    /* padding: 4px 20px; */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 260px;
+    height: 40px;
+
+    background: linear-gradient(178.24deg, #F2F2F2 -28.71%, #DADADA 125.21%);
+    border-radius: 5px;
+
+    font-family: 'M PLUS 1p';
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+
+    color: #3E77BB;
+    border: none;
+
+    cursor: pointer;
+}
+
+.continue-shopping:hover{
+    background: linear-gradient(178.24deg, #F2F2F2 -28.71%, #DADADA 125.21%);
+
+    color: #4096E3;
+}
+
+.buy-cart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+    /* width: 330px; */
+    height: 70px;
+
+    background: rgba(255, 210, 148, 0.3);
+    border: 2px solid #FFCF8E;
+    border-radius: 10px;
+}
+
+.buy-cart p {
+    font-family: 'M PLUS 1p';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+    color: #000000;
+}
+
+
+
+
+.self-modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 800px;
+    height: 530px;
+
+    background: #FFFFFF;
+    border-radius: 25px;
+}
+
+.self-nav{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 10px;
+
+    width: 800px;
+    height: 70px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.self-nav-text{
+    font-family: 'M PLUS 1p';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: #000000;
+
+}
+
+.self-input-div{
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+    width: 800px;
+    height: 300px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.self-form{
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.self-2-inputs-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 15px;
+
+    width: 770px;
+    height: 30px;
+}
+
+.self-input{
+    border: none;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 0px;
+    width: 385px;
+    height: 30px;
+    background: #FFFFFF;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    font-family: 'Jura';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    text-align: start;
+    color: rgba(0, 0, 0, 0.4);
+
+}
+
+.self-input-full{
+    border: none;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 0px;
+    width: 770px;
+    height: 30px;
+    background: #FFFFFF;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    font-family: 'Jura';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    text-align: start;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.self-media-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    width: 800px;
+    height: 90px;
+}
+
+
+.buy-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* padding: 4px 20px; */
+
+    width: 180px;
+    height: 50px;
+
+    background: linear-gradient(178.24deg, #FFDCAB -28.71%, #FFB34E 125.21%);
+    border-radius: 5px;
+    border: none;
+
+    font-family: 'M PLUS 1p';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.buy-btn:hover{
+    background: linear-gradient(178.24deg, #FFE8C7 -28.71%, #FFC67B 125.21%);
+}
+
+/* modals */
 
 /* header */
 
@@ -148,8 +467,9 @@ header{
     cursor: pointer;
 }
 .link:hover{
-    width: 50px;
-    height: 50px;
+    /* width: 50px;
+    height: 50px; */
+    background-color: rgb(241, 241, 241);
     box-shadow: 0px 0px 15px #B4616C;
 }
 
@@ -293,6 +613,7 @@ footer{
 .us-contact p {
     font-family: 'Lobster';
     font-size: 22px;    
+    cursor: pointer;
     
     color: #90444E;
     

@@ -7,19 +7,85 @@
 {% block links %}
 <link rel="stylesheet" href="{% static 'main_app/css/main.css' %}">
 
-<!-- <script src="{% static 'main_app/js/main.js' %}" defer></script> -->
+<script src="{% static 'main_app/js/main.js' %}" defer></script>
 <script src="{% static 'main_app/js/jquery-3.7.1.min.js' %}" defer></script>
 <script src="{% static 'main_app/js/slick.min.js' %}" defer></script>
-<script src="{% static 'main_app/js/main.js' %}" defer></script>
 
 {% endblock %}
 
 {% block scripts %}
-<!-- <script src="{% static 'main_app/js/jquery-3.7.1.min.js' %}"></script>
-<script src="{% static 'main_app/js/slick.main.js' %}"></script>
-<script src="{% static 'main_app/js/main.js' %}"></script> -->
+ <!-- <script src="{% static 'main_app/js/jquery-3.7.1.min.js' %}"></script>
+<script src="{% static 'main_app/js/slick.main.js' %}"></script> -->
+<!-- <script src="{% static 'main_app/js/main.js' %}"></script>  -->
 {% endblock %}
 
+{% block modals %}
+<div class="cover" id="coverSelfOrder">
+    <div class="self-modal">
+        <div class="self-nav">
+            <p class="self-nav-text">Подати заявку</p>
+            <button class="exit" id="exitSelf">X</button>
+        </div>
+        <div class="self-input-div">
+            <form action="" method="post" class="self-form">
+                {% csrf_token %}
+                <div class="self-2-inputs-div">
+                    <input type="text" class="self-input" name="name" placeholder="Ім'я">
+                    <input type="text" class="self-input" name="surname" placeholder="Прізвище">
+                </div>
+                <div class="self-2-inputs-div">
+                    <input type="text" class="self-input" name="phone" placeholder="Телефон">
+                    <input type="text" class="self-input" name="mail" placeholder="Пошта">
+                </div>
+                <input type="text" class="self-input-full" name="description" placeholder="Опишіть ваще побажання">
+                <button class="buy-btn">Замовити</button>
+            </form>
+        </div>
+        <div class="self-nav">
+            <p class="self-nav-text">Або напишіть нам у соц мережах:</p>
+        </div>
+        <div class="self-media-div">
+            <div class="links">
+                <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_box_alignment" class="link">
+                </a>
+            </div>
+            <div class="links">
+                <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_box_alignment" class="link">
+                </a>
+            </div>
+            <div class="links">
+                <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_box_alignment" class="link">           
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cover" id="coverCart">
+    <div class="cart-modal">
+        <div class="cart-nav">
+            <p class="cart-nav-text">Кошик</p>
+            <button class="exit" id="exitCart">X</button>
+        </div>
+        <div class="cart-products">
+            {% if carts %}
+                {% for cart in cart %}
+                    <p>{{cart.name}}</p>
+                {% endfor %}
+            {% else %}
+                <p class="empty-cart">Кошик порожній</p>
+            {% endif %}
+        </div>
+        <div class="total-price">
+            <button class="continue-shopping" id="continueShopping">Продовжити покупки</button>
+            <div class="buy-cart">
+                <p>10000$</p>
+                <button class="buy-btn">Замовити</button>
+            </div>
+        </div>
+    </div>
+</div> 
+{% endblock %}
 
 {% block content %}
 <div class="new">
@@ -27,33 +93,53 @@
     <div class="new-products">
         {% if new_products %}
             {% for products in new_products %}
-                <div class="help-slider-cart">
-                    <div class="product-cart ">
-                        <img src="{{products.image.url}}" alt="123">
-                        <div class="main-info">
-                            <p class="name">
-                                {{products.name}}
-                            </p>
-                            <p class="price">
-                                {{products.price}}грн
-                            </p>
-                        </div>
+            <div class="help-slider-cart">
+                <div class="product-cart ">
+                    <img src="{{products.image.url}}" alt="123">
+                    <div class="main-info">
+                        <p class="name">
+                            {{products.name}}
+                        </p>
+                        <p class="price">
+                            {{products.price}}грн
+                        </p>
+                    </div>
+                    <div class="second-info">
                         <p class="composition">
                             {{products.composition}}
                         </p>
-                        <div class="second-info">
-                            <p class="weight">
-                                {{products.weight}}гр.
-                            </p>
-                            <p class="weight">
-                                /
-                            </p>
-                            <p class="weight">
-                                {{products.kilocalories}}ккал.
-                            </p>
-                        </div>
+                        <form action="" method="POST" class="add-to-cart">
+                            {% csrf_token %}
+                            <input type="hidden" name = "product_id" value={{products.id}}>
+                            <button id="add-to-cart">
+                                <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <rect x="0.5" y="0.5" width="30" height="30" fill="url(#pattern0_416_19)"/>
+                                    <defs>
+                                    <pattern id="pattern0_416_19" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                    <use xlink:href="#image0_416_19" transform="scale(0.01)"/>
+                                    </pattern>
+                                    <image id="image0_416_19" width="100" height="100" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEkUlEQVR4nO2dW4hWVRTHVxeztJBC66EbqIX0oRRGFyHopexCPQRWEESokUg9+ZASUURYoQkKlXZ5aKqXiiKKNCqohygqUxSthzIiQl90MCK7zi923w5EmvnWnPOx917r7B+c15n/mnVmZq//Wnt9IpVKpVKpVCqVSqWSGeBBYMtRzwvAq4rnjtzaXQLspBk/ACfk1u8O4Cuac1Nu/e4AtrdIyNbc+t0BfNkiIWPAhbljcAXwBe14MncMrgA+b5mQUWB67jjcAHxGe5bljsMNwCbg/WOeN46qN95SJGQXsKSDz83AbGtHY++MxRf49JQJWZ47agN8kDIh04BDuSM2wFUpk7Ihd7QGWJUyIRfEv5eV8VmRLCExKe9NIKbr/AWcnzoh4ZhX+X+eT5qMmJDjge/HEdRlfgXOTZ6QmJQ1XfG3gFnAYUW8D+cUORM4ovC3polxgKcVyTgAnJZb6EsKoUvFMMA84A9FnMtLEHulQugOMQzwtiLGPcCJYqixdYUYBLgaHYulFILlrhA8Isagf5LUvGwfSkkApwAHB4j+DThTDAHcqUjG38AlUhpKf2u1GIH+SxbGm8orAjUAc+Lb4mJ+C3hAWQSeI6UCbPMwv4WFInCI/lbx81vAMyaKQOWpZJ/l+S36ReCfboY5rPtbWCsCPftbWCwCvfpbWC0CNQSbxJq/heUi0Ju/hb4IfE6sYsnfwkMR6MXfQl8EPiTWCcfb0v0tdEXgTy6m+pXzW2FQYmGm53plEZi/E5jY3yqZXVYM0a7Mby0WTyj9rVIp3ghtBLAem+Og88Ub4fJKtKqtsV48AmzGHu8CU8QbwOWKtm5JjAEbvSZjCrAbG4wCzwILxCvKRlXgvoyF4YLgTwHHiWfCZRXgF0UytuXW2gmAd5Tu6ZzcWt0D3Kb8U7Umt1b3hMa/sirf7fIkUxrAdYpkhGPwotxaOwGwTpGQzbl1doa452Mi9ifdA9J1FENmPwL3O3lmSumEqQy6Q09Kp2ObgnpiZIw0FHxdoCcWMNqMcp2Q6YZcXv8JCQBnD2HlbOnYSUgAODku1Rx0NcEqPbFI/Ee/CngzDmB7eWbn/tlWKpVKpZIUYC7wWPz0ntF46gpNrBdLmpul38sZidqOxN3EO4C1LlrNsXu4TrH466NsOwrlX53nAR8P0Pg78ISZq9DHApw0yWsIB4CLMujsTXLMdavJ1nPD8dFvgRkJNc4Avmug8ymxBHBpi63XaxPqfLyhxhDbQrEC8DLNOQxMTaBxKvBzC51F3B7WXs4JJ6k2XJNA57UtNR4yMX4KnEV7VibQee8QdM4SIzVHW1YXNAg+EXOldMJCryEEelcCnUuHoPNUsQDwTel9BvrXENqwV6wAPNoi0K+NvDiPiLFLnoN2nIzHkoQ6b2+oMZwizxBLALc0KA5fS3mUDN8LeGWSGkNMt4pFgHuUnygQeD1sD8q0sWjQPPJ/hFjuFsvEzXKfThBkMPZW5Cyy6P+mrBxgMn4CXCZeCGvx4tl/S+w5hP7IDSlskklOydwYPa6RqDVovlj9RSqVSqVSqVQqlUpFbPEPLyJzBNdiO6gAAAAASUVORK5CYII="/>
+                                    </defs>
+                                </svg>
+                                    
+                                    
+                                <!-- <img src="{% static 'img/pidor.jpg' %}" alt=""> -->
+                            </button>
+                        </form>
+                    </div>
+                    <div class="third-info">
+                        <p class="weight">
+                            {{products.weight}}гр.
+                        </p>
+                        <p class="weight">
+                            /
+                        </p>
+                        <p class="weight">
+                            {{products.kilocalories}}ккал.
+                        </p>
                     </div>
                 </div>
+            </div>
             {% endfor %}
         {% endif %}
     </div>
@@ -101,33 +187,53 @@
     <div class="assortment-products">
         {% if products %}
             {% for products in products %}
-                <div class="help-slider-cart">
-                    <div class="product-cart">
-                        <img src="{{products.image.url}}" alt="123">
-                        <div class="main-info">
-                            <p class="name">
-                                {{products.name}}
-                            </p>
-                            <p class="price">
-                                {{products.price}}грн
-                            </p>
-                        </div>
+            <div class="help-slider-cart">
+                <div class="product-cart ">
+                    <img src="{{products.image.url}}" alt="123">
+                    <div class="main-info">
+                        <p class="name">
+                            {{products.name}}
+                        </p>
+                        <p class="price">
+                            {{products.price}}грн
+                        </p>
+                    </div>
+                    <div class="second-info">
                         <p class="composition">
                             {{products.composition}}
                         </p>
-                        <div class="second-info">
-                            <p class="weight">
-                                {{products.weight}}гр.
-                            </p>
-                            <p class="weight">
-                                /
-                            </p>
-                            <p class="weight">
-                                {{products.kilocalories}}ккал.
-                            </p>
-                        </div>
+                        <form action="" method="POST" class="add-to-cart">
+                            {% csrf_token %}
+                            <input type="hidden" name = "product_id" value={{products.id}}>
+                            <button id="add-to-cart">
+                                <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <rect x="0.5" y="0.5" width="30" height="30" fill="url(#pattern0_416_19)"/>
+                                    <defs>
+                                    <pattern id="pattern0_416_19" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                    <use xlink:href="#image0_416_19" transform="scale(0.01)"/>
+                                    </pattern>
+                                    <image id="image0_416_19" width="100" height="100" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEkUlEQVR4nO2dW4hWVRTHVxeztJBC66EbqIX0oRRGFyHopexCPQRWEESokUg9+ZASUURYoQkKlXZ5aKqXiiKKNCqohygqUxSthzIiQl90MCK7zi923w5EmvnWnPOx917r7B+c15n/mnVmZq//Wnt9IpVKpVKpVCqVSqWSGeBBYMtRzwvAq4rnjtzaXQLspBk/ACfk1u8O4Cuac1Nu/e4AtrdIyNbc+t0BfNkiIWPAhbljcAXwBe14MncMrgA+b5mQUWB67jjcAHxGe5bljsMNwCbg/WOeN46qN95SJGQXsKSDz83AbGtHY++MxRf49JQJWZ47agN8kDIh04BDuSM2wFUpk7Ihd7QGWJUyIRfEv5eV8VmRLCExKe9NIKbr/AWcnzoh4ZhX+X+eT5qMmJDjge/HEdRlfgXOTZ6QmJQ1XfG3gFnAYUW8D+cUORM4ovC3polxgKcVyTgAnJZb6EsKoUvFMMA84A9FnMtLEHulQugOMQzwtiLGPcCJYqixdYUYBLgaHYulFILlrhA8Isagf5LUvGwfSkkApwAHB4j+DThTDAHcqUjG38AlUhpKf2u1GIH+SxbGm8orAjUAc+Lb4mJ+C3hAWQSeI6UCbPMwv4WFInCI/lbx81vAMyaKQOWpZJ/l+S36ReCfboY5rPtbWCsCPftbWCwCvfpbWC0CNQSbxJq/heUi0Ju/hb4IfE6sYsnfwkMR6MXfQl8EPiTWCcfb0v0tdEXgTy6m+pXzW2FQYmGm53plEZi/E5jY3yqZXVYM0a7Mby0WTyj9rVIp3ghtBLAem+Og88Ub4fJKtKqtsV48AmzGHu8CU8QbwOWKtm5JjAEbvSZjCrAbG4wCzwILxCvKRlXgvoyF4YLgTwHHiWfCZRXgF0UytuXW2gmAd5Tu6ZzcWt0D3Kb8U7Umt1b3hMa/sirf7fIkUxrAdYpkhGPwotxaOwGwTpGQzbl1doa452Mi9ifdA9J1FENmPwL3O3lmSumEqQy6Q09Kp2ObgnpiZIw0FHxdoCcWMNqMcp2Q6YZcXv8JCQBnD2HlbOnYSUgAODku1Rx0NcEqPbFI/Ee/CngzDmB7eWbn/tlWKpVKpZIUYC7wWPz0ntF46gpNrBdLmpul38sZidqOxN3EO4C1LlrNsXu4TrH466NsOwrlX53nAR8P0Pg78ISZq9DHApw0yWsIB4CLMujsTXLMdavJ1nPD8dFvgRkJNc4Avmug8ymxBHBpi63XaxPqfLyhxhDbQrEC8DLNOQxMTaBxKvBzC51F3B7WXs4JJ6k2XJNA57UtNR4yMX4KnEV7VibQee8QdM4SIzVHW1YXNAg+EXOldMJCryEEelcCnUuHoPNUsQDwTel9BvrXENqwV6wAPNoi0K+NvDiPiLFLnoN2nIzHkoQ6b2+oMZwizxBLALc0KA5fS3mUDN8LeGWSGkNMt4pFgHuUnygQeD1sD8q0sWjQPPJ/hFjuFsvEzXKfThBkMPZW5Cyy6P+mrBxgMn4CXCZeCGvx4tl/S+w5hP7IDSlskklOydwYPa6RqDVovlj9RSqVSqVSqVQqlUpFbPEPLyJzBNdiO6gAAAAASUVORK5CYII="/>
+                                    </defs>
+                                </svg>
+                                    
+                                    
+                                <!-- <img src="{% static 'img/pidor.jpg' %}" alt=""> -->
+                            </button>
+                        </form>
+                    </div>
+                    <div class="third-info">
+                        <p class="weight">
+                            {{products.weight}}гр.
+                        </p>
+                        <p class="weight">
+                            /
+                        </p>
+                        <p class="weight">
+                            {{products.kilocalories}}ккал.
+                        </p>
                     </div>
                 </div>
+            </div>
             {% endfor %}
         {% endif %}
     </div>
