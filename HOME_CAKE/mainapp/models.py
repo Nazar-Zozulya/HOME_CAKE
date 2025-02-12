@@ -10,6 +10,7 @@ class Products(models.Model):
     weight = models.IntegerField()
     kilocalories = models.IntegerField()
 
-class Cart(models.Model):
+class ProductInCart(models.Model):
+    session_key = models.CharField(max_length=32)
     product = models.ForeignKey(Products, on_delete=models.CASCADE)
-    count = models.IntegerField(default=1)
+    count_product = models.IntegerField(default=1)

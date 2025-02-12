@@ -15,15 +15,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from .settings import MEDIA_ROOT, MEDIA_URL, DEBUG
 from django.conf.urls.static import static
 from mainapp.views import *
+from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',main_func,name='main')
+    path('',main_func,name='main'),
+    path('cart/', include('mainapp.urls'))
+    # path('api-auth/', include('rest_framework.urls')),
+    # path('api_cart', ProductInCartAPI.as_view()),
+    # path('/add_to_cart/', add_to_cart),
 ]
+
+# urlpatterns = format_suffix_patterns(urlpatterns)
 
 if DEBUG:
     urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)

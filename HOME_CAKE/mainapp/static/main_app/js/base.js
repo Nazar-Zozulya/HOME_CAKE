@@ -1,41 +1,25 @@
-let coverCart = document.querySelector('#coverCart')
-let cartButton = document.querySelector('#headerCart')
-let exitCart = document.querySelector('#exitCart')
-let continueShopping = document.querySelector('#continueShopping')
 
-let coverSelfOrder = document.querySelector('#coverSelfOrder')
-let selfButton = document.querySelector('#headerSelfOrder')
-let exitSelf = document.querySelector('#exitSelf')
 
-// function closeModal(cover) {
-//     cover.style.display = 'none'
-// }
+function closeModal(cover) {
+    return cover.style.display = 'none'
+}
 
-// function openModal(cover) {
-//     cover.style.display = 'flex'
-// }
+function openModal(cover) {
+    return cover.style.display = 'flex'
+}
 
-// cartButton.addEventListener('click',openModal(coverCart));
+function navMain() {
+    window.scrollTo(0, 0)
+}
 
-// continueShopping.addEventListener('click', closeModal(coverCart))
-cartButton.addEventListener('click', function() {
-    coverCart.style.display = 'flex'
-})
+function navNews() {
+    document.querySelector('.new').scrollIntoView()
+}
 
-continueShopping.addEventListener('click', function() {
-    coverCart.style.display = 'none'
-})
+function navAboutUs() {
+    document.querySelector('.about-us .title').scrollIntoView()
+}
 
-exitCart.addEventListener('click', function() {
-    coverCart.style.display = 'none'
-})
-
-//////////////
-
-selfButton.addEventListener('click', function() {
-    coverSelfOrder.style.display = 'flex'
-})
-
-exitSelf.addEventListener('click', function() {
-    coverSelfOrder.style.display = 'none'
-})
+function navAssortment() {
+    document.querySelector('.assortment').scrollIntoView()
+}
