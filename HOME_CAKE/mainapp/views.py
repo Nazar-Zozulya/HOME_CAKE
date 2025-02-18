@@ -8,32 +8,37 @@ from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
-import json
+# import json
+from django.core.serializers import json
 
 
 @api_view(['POST'])
 def add_to_cart(request: HttpRequest):
     if request.method == 'POST':
-        data = request.data
-        product = Products.objects.get(id=data['product_id'])
+        product_id = int(request.data['product_id'])
         session_key = request.session.session_key
-        
-        
-        if ProductInCart.objects.get(product=product):
-        # if ProductInCart.objects.check(product=product):
-            return Response('sosal')
-        # except:
+        all_products = ProductInCart.objects.filter(session_key=session_key, product_id=product_id)
+        print(all_products)
+        if all_products.exists():
+            ProductInCart.objects.get(session_key=session_key, product_id=product_id).delete()
+            return Response('deleted')
         else:
-            # data = request.data
-            # print(session_id)
-            # product = Products.objects.get(id=data['product_id'])
+            ProductInCart.objects.create(session_key = session_key, product_id=product_id)
+            return Response('created')
             
-            ProductInCart.objects.create(session_key=session_key, product=product)
-            # print('1231245235349689450689045980745897954790')
-            # print(data)
-            # ProductInCartSerializer.create(data)
-            return Response('ok')
+        # return Response('ok')
     
+    
+@api_view(['GET'])
+def get_products_in_cart(request: HttpRequest):
+    session_key = request.session.session_key
+    
+    all_products = ProductInCart.objects.filter(session_key=session_key)
+    
+    json_serializer = json.Serializer()
+    json_serialized = json_serializer.serialize(all_products)
+    
+    return JsonResponse(json_serialized, safe=False)
     
     
 

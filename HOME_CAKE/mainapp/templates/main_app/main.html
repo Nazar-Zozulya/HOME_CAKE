@@ -60,13 +60,13 @@
             <button class="exit" id="exitCart" onclick="closeModal(document.querySelector('#coverCart'))">X</button>
         </div>
         <div class="cart-products">
-            {% if cart %}
+            <!-- {% if cart %}
                 {% for cart in cart %}
                     <p>{{cart.name}}</p>
                 {% endfor %}
             {% else %}
                 <p class="empty-cart">Кошик порожній</p>
-            {% endif %}
+            {% endif %} -->
         </div>
         <div class="total-price">
             <button class="continue-shopping" id="continueShopping" onclick="closeModal(document.querySelector('#coverCart'))">Продовжити покупки</button>
@@ -104,7 +104,7 @@
                             <form action="" method="POST" class="add-to-cart">
                                 {% csrf_token %}
                                 <input type="hidden" name = "product_id" value={{products.id}} class="product-id">
-                                <button id="add-to-cart" type="submit">
+                                <button id="cartButton" type="submit">
                                     <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                         <rect x="0.5" y="0.5" width="30" height="30" fill="url(#pattern0_416_19)"/>
                                         <defs>

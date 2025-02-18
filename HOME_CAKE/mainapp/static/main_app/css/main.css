@@ -104,7 +104,7 @@ main{
     height: 50px;
 }
 
-.add-to-cart button{
+#cartButton{
     display: flex;
     justify-content: center;
     align-items: center;
