@@ -9,8 +9,3 @@ class Products(models.Model):
     composition = models.CharField(max_length=255)
     weight = models.IntegerField()
     kilocalories = models.IntegerField()
-
-class ProductInCart(models.Model):
-    session_key = models.CharField(max_length=32)
-    product = models.ForeignKey(Products, on_delete=models.CASCADE)
-    count_product = models.IntegerField(default=1)

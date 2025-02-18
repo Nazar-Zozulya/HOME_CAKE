@@ -101,10 +101,10 @@
                             {{products.composition}}
                         </p>
                         <div id="formContainer">
-                            <form action="" method="POST" class="add-to-cart">
-                                {% csrf_token %}
-                                <input type="hidden" name = "product_id" value={{products.id}} class="product-id">
-                                <button id="cartButton" type="submit">
+                            <!-- <form action="" method="POST" class="add-to-cart"> -->
+                                <!-- {% csrf_token %} -->
+                                <!-- <input type="hidden" name = "product_id" value={{products.id}} class="product-id"> -->
+                                <button id="cartButton" type="submit" value={{products.id}} >
                                     <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                         <rect x="0.5" y="0.5" width="30" height="30" fill="url(#pattern0_416_19)"/>
                                         <defs>
@@ -115,7 +115,7 @@
                                         </defs>
                                     </svg>
                                 </button>
-                            </form>
+                            <!-- </form> -->
                         </div>
                     </div>
                     <div class="third-info">
@@ -193,10 +193,10 @@
                         <p class="composition">
                             {{products.composition}}
                         </p>
-                        <form action="" method="POST" class="add-to-cart">
-                            {% csrf_token %}
-                            <input type="hidden" name = "product_id" value={{products.id}}>
-                            <button id="add-to-cart">
+                        <!-- <form action="" method="POST" class="add-to-cart"> -->
+                            <!-- {% csrf_token %} -->
+                            <!-- <input type="hidden" name = "product_id" value={{products.id}}> -->
+                            <button id="add-to-cart" value={{products.id}}>
                                 <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <rect x="0.5" y="0.5" width="30" height="30" fill="url(#pattern0_416_19)"/>
                                     <defs>
@@ -210,7 +210,7 @@
                                     
                                 <!-- <img src="{% static 'img/pidor.jpg' %}" alt=""> -->
                             </button>
-                        </form>
+                        <!-- </form> -->
                     </div>
                     <div class="third-info">
                         <p class="weight">
