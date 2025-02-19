@@ -15,9 +15,20 @@ from rest_framework.decorators import api_view
 # @api_view(['POST'])
 def add_to_cart(request: HttpRequest):
     response = HttpResponse('cart')
+    # print(request.COOKIES['cart'])
+    cartcookie = list(request.COOKIES['cart'])
+    cartcookie.remove(' ')
+    # cartcookie.split(' ')
+    # pdro = list(cartcookie)
+    # pdro.remove(' ')
+    # print(cartcookie)
+    list_products = [Products.objects.get(id=i) for i in cartcookie]
+    # print(list_products)
+    # print(list_products)
     
-    cart = request.body
-    print(cart)
+    
+    # cart = request.body
+    # print(cart)
     
     # if request.method == 'POST':
     #     #создаем cookie
@@ -29,8 +40,8 @@ def add_to_cart(request: HttpRequest):
     #         new_product_id += ' ' + old_cart
     #     #задаем cookie
     #     response.set_cookie('cart', new_product_id)
-    
-    return response
+    # return response
+    return JsonResponse(list_products)
     
     
 

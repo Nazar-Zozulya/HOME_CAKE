@@ -17,33 +17,51 @@ $(document).ready(function () {
         easing: "ease",
         infinite: false,
     });
+    $('#headerCart').click(function () {
+        fetch('/cart/create')
+    })
 
 });
 
 // отримуємо кнопку додавання в cart
-const buttonBuy = document.querySelectorAll(selectors = '#cartButton')
+const buttonBuy = document.querySelectorAll('#cartButton')
 // робимо цикл для всіх продуктів
 for (let count = 0; count < buttonBuy.length; count++) {
     let button = buttonBuy[count]
     var countInCart = 0
     // задаємо умову на додаванн продукту в cart
-    button.addEventListener(type = 'click', listener = function(event){
+    button.addEventListener('click', function(event){
         // let cookie = document.cookie.split(';')
         let cart_cookie = document.cookie.split(';')[1]
         // let cart_cookie2 = cart_cookie.split(',')
         // alert(cart_cookie)
         // задаємо умову якщо cookies не пуста
-        if (cart_cookie != undefined){
+        if (cart_cookie != undefined || cart_cookie != ''){
             // обрізаємо cookies
             // alert(document.cookie['cart'])
             let currentProduct = cart_cookie.split('=')[1]
+            let productsList = currentProduct.split(' ')
+            // alert(productsList)
+            if( productsList.includes(button.value) ){
+                const index = productsList.indexOf(button.value)
+                productsList.splice(index, 1)
+                console.log(productsList)
+                // let idProduct = productsList
+                document.cookie = `cart = ${productsList.join(' ')}`
+                return
+            }
+            else{
+                let idProduct = currentProduct + ' ' + button.value
+                document.cookie = `cart = ${idProduct}`
+            }
+            // if (currentProduct.includes('3')){
+            //     alert('soso')
+            // }
             // alert(currentProduct)
             // додаємо до cookies продукт
-            let idProduct = currentProduct + ' ' + button.value
-            document.cookie = `cart = ${idProduct}`
             
-            currentProduct = cart_cookie.split(' ')
-            countInCart += 1
+            // currentProduct = cart_cookie.split(' ')
+            // countInCart += 1
             // alert(button.value)
             // window.location.reload()
             // countCart.textContent = currentProduct.length
