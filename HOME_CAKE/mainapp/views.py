@@ -1,50 +1,41 @@
+import json
 from django.shortcuts import render
+from collections import Counter
 from mainapp.models import Products
 from django.http import HttpRequest
-# from .serializers import ProductInCartSerializer
-
-from django.http import HttpRequest, JsonResponse, HttpResponse
+from .serializers import ProductsSerializer
+from django.http import HttpRequest, JsonResponse
 from rest_framework import generics
 from rest_framework.decorators import api_view
-# from rest_framework.response import Response
-# from rest_framework.reverse import reverse
-# import json
-# from django.core.serializers import json
+from django.forms.models import model_to_dict
+from rest_framework.renderers import JSONRenderer
 
 
-# @api_view(['POST'])
-def add_to_cart(request: HttpRequest):
-    response = HttpResponse('cart')
-    # print(request.COOKIES['cart'])
-    cartcookie = list(request.COOKIES['cart'])
-    cartcookie.remove(' ')
-    # cartcookie.split(' ')
-    # pdro = list(cartcookie)
-    # pdro.remove(' ')
-    # print(cartcookie)
-    list_products = [Products.objects.get(id=i) for i in cartcookie]
-    # print(list_products)
-    # print(list_products)
+def products_in_cart(request: HttpRequest):
+    # получаем куки
+    cart_cookie = request.COOKIES['cart']
     
+    # обрезаем куки и получает айдишники
+    ids_list = list(cart_cookie.split(' ')) # [1,2,3,4]
     
-    # cart = request.body
-    # print(cart)
-    
-    # if request.method == 'POST':
-    #     #создаем cookie
-    #     old_cart = request.COOKIES.get('cart')
-    #     #получаем скрытый input который равняется id продукта
-    #     new_product_id = request.POST('product_id')
-    #     #создаем условиена добовление нового продукта в список
-    #     if old_cart:
-    #         new_product_id += ' ' + old_cart
-    #     #задаем cookie
-    #     response.set_cookie('cart', new_product_id)
-    # return response
-    return JsonResponse(list_products)
-    
-    
+    # обрабатываем список айдишников на количество повторенний
+    ids_count = Counter(ids_list) # Counter({'3': 2, '4': 1, '2': 1})
 
+    # получаем продукты по айдишникам которые мы получаем по ключам
+    list_of_products = Products.objects.filter(id__in=ids_count.keys())
+    
+    # сериализируем ети продукты
+    serialized_products = ProductsSerializer(list_of_products, many=True ).data
+    
+    # добавляем к каждому продукту информацию про его повторения
+    for product in serialized_products:
+        product['count'] = ids_count[str(product['id'])]
+
+    # отправляем ето в json формате
+    return JsonResponse(serialized_products, safe=False)
+
+
+    
 def main_func(request: HttpRequest):
 
     # response = render(request, 'main_app/main.html', context)
@@ -55,3 +46,14 @@ def main_func(request: HttpRequest):
                'new_products':new_products}
 
     return render(request, 'main_app/main.html', context)
+
+class ProductsAPI(generics.ListAPIView):
+    queryset = Products.objects.all()
+    serializer_class = ProductsSerializer
+
+def get_product_by_id(request: HttpRequest, id):
+    product = Products.objects.filter(pk=id).first()
+    print(product)
+    serializer = ProductsSerializer(product)
+    
+    return JsonResponse(serializer.data, safe=False)

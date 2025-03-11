@@ -104,12 +104,29 @@ body{
 .cart-products{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    padding: 15px;
+    gap: 15px;
 
 
     width: 800px;
     height: 500px;
+
+    overflow-y: scroll;
+}
+
+.cart-product{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px;
+    width: 770px;
+    /* height: 200px; */
+    background: #FFFEFC;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
 }
 
 .empty-cart{
@@ -188,7 +205,9 @@ body{
 }
 
 
-
+.pidorok {
+    background-color: red;
+}
 
 .self-modal{
     display: flex;
