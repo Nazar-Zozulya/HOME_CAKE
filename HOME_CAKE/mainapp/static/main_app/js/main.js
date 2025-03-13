@@ -43,98 +43,121 @@ $(document).ready(function () {
         infinite: false,
     });
      $('#headerCart').click(async function () {
-        //  // получаем список айдишников с куки
+        try {
+            //  // получаем список айдишников с куки
 
-        const response = await fetch(`/cart/products/`)
-        const all_products = await response.json()
-        // console.log(all_products)
+            const response = await fetch(`/cart/products/`)
+            const all_products = await response.json()
 
-        const cartContainer = document.querySelector('.cart-products')
+            const products = all_products.products
 
-        // view_products = all_products.
-        all_products.map(function (product) {
-            const cartDiv = document.createElement('p')
-            cartDiv.classList.add('cart-product')
-            let count = product.count
+            const sumCart = document.querySelector('#sumCart')
 
-            // Создаем карточку продукта
-            cartDiv.innerHTML = `
-            <div style="${cartStyle}" >
-                <img src="${product.image}" style="${imgStyle}"  alt="123">
-                <div style="${textDivStyle}">
-                    <div style="${mainTextDivStyle}">
-                        <p style="${nameText}" >${product.name}</p>
-                        <p style="${compositionText}" >${product.composition}</p>
-                    </div>
-                    <div style="${secondTextDivStyle}">
-                        <div style="${secondTextDiv}">
-                            <div style="${changeCountDiv}">
-                                <button onclick="minusButton(${product.id},${count},document.querySelector('#count'))"  style="${minusAndPlusText}" >-</button>
-                                <div style="${countDiv}">
-                                    <p  id="count" style="${countText}">${count}</p>
-                                </div>            
-                                <button onclick="plusButton(${product.id},${count},document.querySelector('#count'))"  style="${minusAndPlusText}">+</button>
+            all_sum = all_products.sum
+
+            sumCart.textContent = all_sum
+            // console.log(all_products)
+
+            const countProducts = {}
+
+            products.forEach((product)=>{
+                countProducts[product.id] = product.count
+            })
+
+            console.log(countProducts)
+
+            const cartContainer = document.querySelector('.cart-products')
+
+            // view_products = all_products.
+            products.map(function (product) {
+                const cartDiv = document.createElement('div')
+                cartDiv.classList.add('cart-product')
+
+                
+
+                // Создаем карточку продукта
+                cartDiv.innerHTML = `
+                <div style="${cartStyle}" >
+                    <img src="${product.image}" style="${imgStyle}"  alt="123">
+                    <div style="${textDivStyle}">
+                        <div style="${mainTextDivStyle}">
+                            <p style="${nameText}" >${product.name}</p>
+                            <p style="${compositionText}" >${product.composition}</p>
+                        </div>
+                        <div style="${secondTextDivStyle}">
+                            <div style="${secondTextDiv}">
+                                <div style="${changeCountDiv}">
+                                    <button id="minusButton${product.id}" style="${minusAndPlusText}" >-</button>
+                                    <div style="${countDiv}">
+                                        <p  id="count${product.id}" style="${countText}">${countProducts[product.id]}</p>
+                                    </div>            
+                                    <button id="plusButton${product.id}" style="${minusAndPlusText}">+</button>
+                                </div>
+                                <p style="${priceText}">${product.price}</p>                                            
                             </div>
-                            <p style="${priceText}">${product.price}</p>                                            
                         </div>
                     </div>
                 </div>
-            </div>
-            `
+                `
 
-            // Выводим карточку
-            cartContainer.appendChild(cartDiv)
-        })
-        
+
+                // Выводим карточку
+                cartContainer.appendChild(cartDiv)
+
+                const countP = document.querySelector(`#count#${product.id}`)
+
+                const plusButton = document.querySelector(`#plusButton${product.id}`)
+
+                const minusButton = document.querySelector(`#minusButton${product.id}`)
+
+                console.log(countP)
+
+                plusButton.addEventListener('click', function () {
+                    let cart_cookie = document.cookie.split(';')[1]    
+                    let currentProduct = cart_cookie.split('=')[1]
+                    let productsList = currentProduct.split(' ')
+    
+                    productsList.splice()
+                    productsList.push(product.id)
+
+                    countProducts[product.id] += 1
+                    updateCounter()
+
+                    document.cookie = `cart = ${productsList.join(' ')}`
+                })
+                
+                minusButton.addEventListener('click', function () {
+                    let cart_cookie = document.cookie.split(';')[1]    
+                    let currentProduct = cart_cookie.split('=')[1]
+                    let productsList = currentProduct.split(' ')
+
+                    let index = productsList.indexOf(`${product.id}`)
+
+                    if( index !== -1){
+                        productsList.splice(index, 1)
+                    }
+
+                    countProducts[product.id] -= 1
+                    updateCounter()
+
+                    document.cookie = `cart = ${productsList.join(' ')}`
+                })
+
+                function updateCounter() {
+                    if(countProducts[product.id] === 0){
+                        cartDiv.remove()
+                    } else {
+                        countP.textContent = countProducts[product.id];
+                        console.log(countProducts)
+                    }
+                }
+
+            })
+        } catch(error){
+            console.log(error)
+        }
     })
 })
-
-
-
-function plusButton(id, count, p){
-    let cart_cookie = document.cookie.split(';')[1]    
-    let currentProduct = cart_cookie.split('=')[1]
-    let productsList = currentProduct.split(' ')
-    
-    productsList.splice()
-    productsList.push(id)
-    
-    count = count + 1
-
-    console.log(count)
-
-    p.textContent = count
-
-    document.cookie = `cart = ${productsList.join(' ')}`
-    return
-
-}
-
-
-function minusButton(id, count, p){
-    // отримуємо cookies
-    let cart_cookie = document.cookie.split(';')[1]    
-    let currentProduct = cart_cookie.split('=')[1]
-    let productsList = currentProduct.split(' ')
-
-    let index = productsList.indexOf(`${id}`)
-
-    count = count - 1
-
-    console.log(count)
-
-    p.textContent = count
-
-
-    if( index !== -1){
-        productsList.splice(index, 1)
-    }
-
-    console.log(productsList)
-
-    document.cookie = `cart = ${productsList.join(' ')}`
-    return
-}
 
 
 

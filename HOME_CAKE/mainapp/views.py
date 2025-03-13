@@ -27,12 +27,17 @@ def products_in_cart(request: HttpRequest):
     # сериализируем ети продукты
     serialized_products = ProductsSerializer(list_of_products, many=True ).data
     
+    all_prices = []
+    
     # добавляем к каждому продукту информацию про его повторения
     for product in serialized_products:
         product['count'] = ids_count[str(product['id'])]
+        all_prices.append(product['price'] * product['count'])
 
+    all_prices = sum(all_prices)
+    
     # отправляем ето в json формате
-    return JsonResponse(serialized_products, safe=False)
+    return JsonResponse({'sum':all_prices,'products':serialized_products}, safe=False)
 
 
     
